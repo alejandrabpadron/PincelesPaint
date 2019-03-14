@@ -11,15 +11,13 @@ import javax.swing.JColorChooser;
 public class VentanaPaint extends javax.swing.JFrame {
 
     Puntos puntos = new Puntos();
-    /*inicializo dos variables xx y yy que corresponden al grosor por defecto
-    sin embargo el grosor puede cambiar   a través de las cajas de texto
-    */
     int xx = 20;
     int yy = 20;
 
     public VentanaPaint() {
         initComponents();
-        setTitle("Mi Paint);
+
+        setTitle("Mi Paint");
         setLocationRelativeTo(null);
         setIconImage(new ImageIcon(getClass().getResource("/img/palette.png")).getImage());
 
@@ -267,14 +265,13 @@ public class VentanaPaint extends javax.swing.JFrame {
     private void btn_grosorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_grosorActionPerformed
         xx = Integer.parseInt(txt_x.getText());
         yy = Integer.parseInt(txt_y.getText());
-        //Captura los valores del grosor en cada una de las cajas de texto
+        //Captura los valores del grosor
     }//GEN-LAST:event_btn_grosorActionPerformed
 
     private void pnl_dibujoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_dibujoMouseDragged
         //Llamo al metodo FuardarPuntos y le mando las coordenadas en x y y que capturé
         puntos.GuardarPuntos(evt.getX(), evt.getY());
-        //Llamo al metodo DibujarLapiz para que me pinte el 
-        /* OJO este metodo puede  cambiar dependiendo del pincel que se necesite*/
+        //Llamo al metodo Dibujar para que me pinte el trazo
         DibujarLapiz();
     }//GEN-LAST:event_pnl_dibujoMouseDragged
 
@@ -294,7 +291,6 @@ public class VentanaPaint extends javax.swing.JFrame {
     public void DibujarLapiz() {
         //size() para saber el tamaño de la Lista y asi el numero de iteraciones del ciclo
         for (int i = 0; i < puntos.ListaX().size(); i++) {
-            //en las variables recorro las posiciones almacenadas en x y y segun la iteracion
             int x = puntos.ListaX().get(i);
             int y = puntos.ListaY().get(i);
             pnl_dibujo.getGraphics().fill3DRect(x, y, xx, yy, true);
