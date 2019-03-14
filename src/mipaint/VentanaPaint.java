@@ -20,9 +20,9 @@ public class VentanaPaint extends javax.swing.JFrame {
     public VentanaPaint() {
         initComponents();
         //Titulo de la ventana
-        setTitle("Mi Paint
+        setTitle("Mi Paint);
         //Localizar en el centro la ventana
-        setLocationRelativeTo(null
+        setLocationRelativeTo(null);
         //Icono de la ventana
         setIconImage(new ImageIcon(getClass().getResource("/img/palette.png")).getImage());
 
